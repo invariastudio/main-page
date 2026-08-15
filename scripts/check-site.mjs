@@ -88,6 +88,13 @@ for (const file of htmlFiles) {
 
   const attributes = html.matchAll(/(?:href|src)="([^"]+)"/gi);
   for (const match of attributes) {
+    if (match[1].startsWith('#')) {
+      const fragment = decodeURIComponent(match[1].slice(1));
+      if (fragment && !new RegExp(`\\bid=["']${fragment.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["']`).test(html)) {
+        errors.push(`${name} has a missing page section: ${match[1]}`);
+      }
+      continue;
+    }
     const target = publicPath(file, match[1]);
     if (!target) continue;
     try {
@@ -97,6 +104,11 @@ for (const file of htmlFiles) {
     } catch {
       errors.push(`${name} has a missing target: ${match[1]}`);
     }
+  }
+
+  if (/<body class="policy-page">/i.test(html)) {
+    const tocCount = [...html.matchAll(/<nav class="policy-toc"/gi)].length;
+    if (tocCount !== 2) errors.push(`${name} must contain English and Portuguese policy contents`);
   }
 }
 
