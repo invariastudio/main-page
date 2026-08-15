@@ -1,0 +1,9 @@
+{
+  "name": "invaria-studio-public-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check-site.mjs"
+  }
+}

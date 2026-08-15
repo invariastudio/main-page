@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://invariastudio.github.io/main-page/sitemap.xml

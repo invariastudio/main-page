@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Saldara privacy policy in English and Brazilian Portuguese.">
+  <meta name="theme-color" content="#00594d">
+  <title>Saldara Privacy Policy</title>
+  <link rel="icon" href="../../assets/saldara-icon.png">
+  <link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="../../" aria-label="Invaria Studio home">
+      <span class="wordmark-mark" aria-hidden="true">IV</span>
+      <span>Invaria Studio</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="../../">Studio</a></li>
+        <li><a href="../">Saldara</a></li>
+        <li><a href="./" aria-current="page">Privacy</a></li>
+        <li><a href="../support/">Support</a></li>
+        <li><a href="#pt-br" lang="pt-BR">Português</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <header class="policy-header">
+      <p class="eyebrow">Saldara</p>
+      <h1>Privacy policy</h1>
+      <p class="policy-meta">Effective and last updated: August 15, 2026 · Version 1.0</p>
+      <p class="lede">Saldara is a local-first manual finance application published by Invaria Studio. This policy explains the app's implemented data practices.</p>
+      <div class="actions">
+        <a class="button secondary" href="#pt-br" lang="pt-BR">Ler em português</a>
+        <a class="button secondary" href="mailto:invariastudio@gmail.com">Privacy contact</a>
+      </div>
+    </header>
+
+    <section class="policy-section">
+      <h2>1. Developer and contact</h2>
+      <p>Saldara is published by <strong>Invaria Studio</strong>. Privacy and data-handling questions can be sent to <a href="mailto:invariastudio@gmail.com">invariastudio@gmail.com</a> or submitted through the public <a href="../support/">Saldara support page</a>.</p>
+    </section>
+    <section class="policy-section">
+      <h2>2. What Saldara stores on your device</h2>
+      <p>Accounts, cards, categories, budgets, transactions, ledger postings, recurring rules, installments, reconciliations, currency valuations, import review data, deterministic category rules and suggestions, audit events, and recoverable deletions are stored in an encrypted SQLite database inside the app's private storage. A random database key, privacy preferences, and narrowly scoped Premium entitlement data are kept in Android secure storage.</p>
+      <p>Enabled reminder content and schedules are encrypted with AES-256-GCM using an Android Keystore key in app-private storage so alarms can be restored after a reboot or update. Allowlisted local diagnostics contain event codes, severity, timestamps, and non-sensitive dimensions; they do not contain names, descriptions, monetary amounts, file paths, passwords, keys, or exception text.</p>
+    </section>
+    <section class="policy-section">
+      <h2>3. Collection, sharing, advertising, and automated analysis</h2>
+      <p>Saldara has no Saldara user account, cloud financial database, bank connection, automatic bank transaction import, app analytics product, crash-reporting product, advertising SDK, or ledger and diagnostic telemetry. Invaria Studio does not receive, collect, sell, rent, or share your ledger or personal financial records. Saldara does not show ads and does not use data for advertising.</p>
+      <p>Reports, import parsing, category rules, and category suggestions are calculated on the device using deterministic logic. They do not use a large language model or generative AI and do not send financial records away for analysis.</p>
+      <p>Google Play Billing, Saldara's purchase verifier, Banco Central do Brasil, Android system services, user-selected document providers, and this website host process only the limited information described below.</p>
+    </section>
+    <section class="policy-section">
+      <h2>4. Network and operating-system services</h2>
+      <ul class="policy-list">
+        <li><strong>PTAX quotes:</strong> only when requested, Saldara sends a USD/BRL date window over HTTPS to <code>olinda.bcb.gov.br</code>, operated by Banco Central do Brasil. No ledger content, amount, account name, or transaction description is added to this request. Normal network metadata, such as the device's public IP address, is visible to that service.</li>
+        <li><strong>Premium purchase and restore:</strong> Google Play Billing processes the product, localized price, purchase status, and purchase history required for a one-time Premium purchase. Saldara sends its verifier only the product and package IDs, one-time purchase token, purchase type, app version, and a random installation ID. The verifier validates and acknowledges the purchase through Google and returns a signed entitlement receipt. No ledger, account, card, transaction, amount, category, budget, audit, diagnostic, import content, or analysis data is sent.</li>
+        <li><strong>Device authentication:</strong> Android performs biometric or device-credential checks. Saldara receives only success or failure and never receives biometric templates or the device credential.</li>
+        <li><strong>Notifications:</strong> Android displays reminders created by you. Reminder text may appear on the lock screen according to your Android settings.</li>
+        <li><strong>Document providers:</strong> when you import a statement, create or restore a backup, or export a CSV or audit artifact, Android gives Saldara temporary access only to the document you select.</li>
+        <li><strong>Privacy and support website:</strong> opening a configured Saldara privacy or support link is user initiated and launches your external browser. The app adds no ledger, account, amount, transaction, or device-identifier data to the URL. These static pages are hosted by GitHub Pages, so GitHub may receive normal web-request and usage metadata under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.</li>
+      </ul>
+    </section>
+    <section class="policy-section">
+      <h2>5. Backups, imports, exports, and security</h2>
+      <p>The local database uses sqlite3mc encryption with a random 256-bit key. New full backups are encrypted with AES-256-GCM. Their 256-bit key is derived from your password with PBKDF2-HMAC-SHA256, a random salt, and the work factor stored in the authenticated header. Backup passwords are never stored and cannot be recovered by Saldara or Invaria Studio.</p>
+      <p>Statement import is user initiated. Selected OFX and mapped CSV files are read and validated locally before reviewed entries are committed. Saldara does not upload statement content.</p>
+      <p>Transaction CSV and optional plaintext audit JSON files are unencrypted. Saldara requires an explicit warning acknowledgement and a destination selected by you. External imports, backups, exports, and audit artifacts remain under your document provider's security and retention rules.</p>
+    </section>
+    <section class="policy-section">
+      <h2>6. Retention and deletion</h2>
+      <ul class="policy-list">
+        <li>Ledger and configuration records remain until you edit, delete, or reset them. Deleted transactions remain recoverable for 30 days before purge.</li>
+        <li>Local diagnostics are retained for up to 30 days.</li>
+        <li>Reminders remain until you disable or delete them.</li>
+        <li>A Premium purchase token, random billing installation ID, and signed entitlement receipt remain in secure storage as needed to verify, restore, and use the purchase. They are removed when Android clears the app's storage or the app is uninstalled; Google retains purchase records under its own policies.</li>
+        <li>You can delete individual records and legacy local artifacts in the app. Android's “Clear storage” control or uninstalling Saldara removes app-private data.</li>
+        <li>External imports, backups, CSV files, and audit or diagnostic exports are controlled by you and must be deleted through the selected document provider or file manager.</li>
+      </ul>
+      <p>Saldara has no online account, so there is no Saldara server-side account or cloud financial database to delete. Contact Invaria Studio if you have a question about purchase-verifier data.</p>
+    </section>
+    <section class="policy-section">
+      <h2>7. Permissions</h2>
+      <p>Saldara uses Internet for optional PTAX quotes and narrowly scoped Google Play purchase verification; biometrics for app lock and sensitive actions; notifications and vibration for user-created reminders; and boot completion to reschedule enabled reminders. Android backup and device transfer are disabled. No broad storage, contacts, location, microphone, camera, advertising ID, or SMS permission is requested.</p>
+    </section>
+    <section class="policy-section">
+      <h2>8. Children, financial services, and international use</h2>
+      <p>Saldara is a general-audience manual record-keeping tool and is not directed to children. It does not provide banking, payments, lending, trading, insurance, tax preparation, or personalized financial advice. You are responsible for deciding whether the app is appropriate for your records and for following laws that apply where you live.</p>
+    </section>
+    <section class="policy-section">
+      <h2>9. Changes</h2>
+      <p>This policy will be updated when Saldara's data practices change. The effective date and version above will change at the same time. Material changes will be reflected in the app and relevant Google Play declarations before the changed practice is released.</p>
+    </section>
+
+    <div class="language-divider" id="pt-br" lang="pt-BR">
+      <p class="eyebrow">Saldara</p>
+      <h1>Política de privacidade</h1>
+      <p class="policy-meta">Vigente e atualizada em 15 de agosto de 2026 · Versão 1.0</p>
+      <p class="lede">O Saldara é um aplicativo local de controle financeiro manual publicado pela Invaria Studio. Esta política explica as práticas de dados implementadas no app.</p>
+    </div>
+    <section class="policy-section" lang="pt-BR">
+      <h2>1. Publicadora e contato</h2>
+      <p>O Saldara é publicado pela <strong>Invaria Studio</strong>. Dúvidas sobre privacidade e tratamento de dados podem ser enviadas para <a href="mailto:invariastudio@gmail.com">invariastudio@gmail.com</a> ou pela <a href="../support/#pt-br">página pública de suporte do Saldara</a>.</p>
+    </section>
+    <section class="policy-section" lang="pt-BR">
+      <h2>2. O que o Saldara armazena no aparelho</h2>
+      <p>Contas, cartões, categorias, orçamentos, transações, lançamentos contábeis, regras recorrentes, parcelamentos, conciliações, cotações, dados de revisão de importação, regras e sugestões determinísticas de categoria, eventos de auditoria e exclusões recuperáveis ficam em um banco SQLite criptografado no armazenamento privado do app. Uma chave aleatória do banco, preferências de privacidade e dados estritamente necessários ao direito Premium ficam no armazenamento seguro do Android.</p>
+      <p>O conteúdo e os horários de lembretes ativos usam AES-256-GCM com uma chave do Android Keystore no armazenamento privado do app. Diagnósticos locais permitidos contêm códigos de evento, gravidade, horários e dimensões não sensíveis; não contêm nomes, descrições, valores, caminhos de arquivos, senhas, chaves nem textos de exceção.</p>
+    </section>
+    <section class="policy-section" lang="pt-BR">
+      <h2>3. Coleta, compartilhamento, publicidade e análise automatizada</h2>
+      <p>O Saldara não tem conta própria de usuário, banco financeiro em nuvem, conexão bancária, importação bancária automática, produto de métricas de uso, produto de relatórios remotos de falhas, SDK de publicidade nem telemetria do histórico e dos diagnósticos. A Invaria Studio não recebe, coleta, vende, aluga ou compartilha seu histórico ou seus registros financeiros pessoais. O Saldara não exibe anúncios nem usa dados para publicidade.</p>
+      <p>Relatórios, leitura de importações, regras e sugestões de categoria são calculados no aparelho com lógica determinística. Eles não usam modelo de linguagem ou IA generativa e não enviam registros financeiros para análise externa.</p>
+      <p>O Google Play Billing, o verificador de compras do Saldara, o Banco Central do Brasil, serviços do Android, provedores de documentos escolhidos pelo usuário e o provedor deste site processam apenas as informações limitadas descritas abaixo.</p>
+    </section>
+    <section class="policy-section" lang="pt-BR">
+      <h2>4. Rede e serviços do sistema</h2>
+      <ul class="policy-list">
+        <li><strong>Cotações PTAX:</strong> somente quando solicitado, o Saldara envia um intervalo de datas USD/BRL por HTTPS para <code>olinda.bcb.gov.br</code>, do Banco Central do Brasil. Nenhum conteúdo do histórico, valor, nome de conta ou descrição de transação é adicionado. Metadados normais de rede, como o IP público do aparelho, ficam visíveis ao serviço.</li>
+        <li><strong>Compra e restauração Premium:</strong> o Google Play Billing processa produto, preço localizado, estado e histórico de compras necessários para uma compra única do Premium. O Saldara envia ao verificador apenas os identificadores do produto e pacote, token único da compra, tipo de compra, versão do app e um identificador aleatório da instalação. O verificador valida e confirma a compra no Google e devolve um comprovante assinado. Nenhum histórico, conta, cartão, transação, valor, categoria, orçamento, auditoria, diagnóstico, conteúdo importado ou análise é enviado.</li>
+        <li><strong>Autenticação do aparelho:</strong> o Android realiza a verificação biométrica ou da credencial. O Saldara recebe apenas sucesso ou falha e nunca recebe modelos biométricos ou a credencial.</li>
+        <li><strong>Notificações:</strong> o Android exibe os lembretes criados por você. O texto pode aparecer na tela bloqueada conforme suas configurações.</li>
+        <li><strong>Provedores de documentos:</strong> ao importar um extrato, criar ou restaurar um backup ou exportar CSV e auditoria, o Android concede acesso temporário apenas ao documento escolhido por você.</li>
+        <li><strong>Site de privacidade e suporte:</strong> abrir um link configurado do Saldara é uma ação iniciada por você e usa o navegador externo. O app não adiciona dados do histórico, contas, valores, transações ou identificadores do aparelho ao endereço. Estas páginas estáticas são hospedadas pelo GitHub Pages; o GitHub pode receber metadados normais de acesso conforme a <a href="https://docs.github.com/pt/site-policy/privacy-policies/github-general-privacy-statement">Declaração Geral de Privacidade do GitHub</a>.</li>
+      </ul>
+    </section>
+    <section class="policy-section" lang="pt-BR">
+      <h2>5. Backups, importações, exportações e segurança</h2>
+      <p>O banco local usa criptografia sqlite3mc com uma chave aleatória de 256 bits. Novos backups completos usam AES-256-GCM. A chave de 256 bits é derivada da senha com PBKDF2-HMAC-SHA256, sal aleatório e fator de trabalho registrado no cabeçalho autenticado. Senhas de backup nunca são armazenadas e não podem ser recuperadas pelo Saldara ou pela Invaria Studio.</p>
+      <p>A importação de extratos é iniciada pelo usuário. Arquivos OFX e CSV mapeados são lidos e validados localmente antes que lançamentos revisados sejam confirmados. O Saldara não envia o conteúdo do extrato.</p>
+      <p>Arquivos CSV de transações e o JSON opcional de auditoria em texto aberto não têm criptografia. O Saldara exige a confirmação de um aviso e um destino escolhido por você. Importações, backups, exportações e auditorias externas seguem as regras de segurança e retenção do seu provedor de documentos.</p>
+    </section>
+    <section class="policy-section" lang="pt-BR">
+      <h2>6. Retenção e exclusão</h2>
+      <ul class="policy-list">
+        <li>Registros e configurações permanecem até serem editados, excluídos ou redefinidos. Transações excluídas podem ser recuperadas por 30 dias antes da eliminação.</li>
+        <li>Diagnósticos locais ficam retidos por até 30 dias.</li>
+        <li>Lembretes permanecem até serem desativados ou excluídos.</li>
+        <li>Um token de compra Premium, identificador aleatório da instalação e comprovante assinado permanecem no armazenamento seguro enquanto necessários para verificar, restaurar e usar a compra. Eles são removidos quando o Android limpa os dados ou o app é desinstalado; o Google mantém registros de compra conforme suas próprias políticas.</li>
+        <li>Você pode excluir registros e artefatos locais antigos no app. “Limpar armazenamento” no Android ou desinstalar o Saldara remove os dados privados do aplicativo.</li>
+        <li>Importações, backups, CSVs e exportações externas de auditoria ou diagnóstico são controlados por você e devem ser excluídos no provedor de documentos ou gerenciador de arquivos.</li>
+      </ul>
+      <p>O Saldara não possui conta on-line nem banco financeiro em nuvem. Entre em contato com a Invaria Studio se tiver dúvidas sobre os dados do verificador de compras.</p>
+    </section>
+    <section class="policy-section" lang="pt-BR">
+      <h2>7. Permissões</h2>
+      <p>O Saldara usa Internet para cotações PTAX opcionais e verificação limitada de compras no Google Play; biometria para bloqueio e ações sensíveis; notificações e vibração para lembretes criados pelo usuário; e inicialização concluída para reagendar lembretes ativos. Backup e transferência do Android ficam desativados. O app não solicita acesso amplo a arquivos, contatos, localização, microfone, câmera, identificador de publicidade ou SMS.</p>
+    </section>
+    <section class="policy-section" lang="pt-BR">
+      <h2>8. Crianças, serviços financeiros e uso internacional</h2>
+      <p>O Saldara é uma ferramenta geral de registro manual e não é direcionado a crianças. Ele não oferece serviços bancários, pagamentos, empréstimos, investimentos, seguros, preparação tributária ou consultoria financeira personalizada. Você é responsável por decidir se o app é adequado aos seus registros e por cumprir as leis aplicáveis onde vive.</p>
+    </section>
+    <section class="policy-section" lang="pt-BR">
+      <h2>9. Alterações</h2>
+      <p>Esta política será atualizada quando as práticas de dados do Saldara mudarem. A data e a versão acima serão alteradas junto. Mudanças relevantes serão refletidas no app e nas declarações do Google Play antes da prática modificada ser lançada.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Saldara is published by Invaria Studio. Contact: <a href="mailto:invariastudio@gmail.com">invariastudio@gmail.com</a></p>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="../">Saldara</a>
+      <a href="../support/">Support</a>
+      <a href="../../privacy/">Website privacy</a>
+    </nav>
+  </footer>
+</body>
+</html>

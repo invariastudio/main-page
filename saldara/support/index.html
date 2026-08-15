@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Official Saldara support and troubleshooting in English and Brazilian Portuguese.">
+  <meta name="theme-color" content="#00594d">
+  <title>Saldara Support — Invaria Studio</title>
+  <link rel="icon" href="../../assets/saldara-icon.png">
+  <link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="../../" aria-label="Invaria Studio home"><span class="wordmark-mark" aria-hidden="true">IV</span><span>Invaria Studio</span></a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="../../">Studio</a></li>
+        <li><a href="../">Saldara</a></li>
+        <li><a href="../privacy/">Privacy</a></li>
+        <li><a href="./" aria-current="page">Support</a></li>
+        <li><a href="#pt-br" lang="pt-BR">Português</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <header class="policy-header">
+      <p class="eyebrow">Official Saldara support</p>
+      <h1>Practical help for a local-first app.</h1>
+      <p class="lede">For support and privacy questions, email <a href="mailto:invariastudio@gmail.com">invariastudio@gmail.com</a>.</p>
+      <div class="actions"><a class="button" href="mailto:invariastudio@gmail.com?subject=Saldara%20support">Email support</a></div>
+    </header>
+
+    <aside class="notice" aria-labelledby="safe-report-title">
+      <h2 id="safe-report-title">Before sending a report</h2>
+      <p>Include the Saldara version, Android version, what you expected, what happened, and steps that reproduce it. Do <strong>not</strong> include backup passwords, encryption keys, purchase tokens, real names, account identifiers, transaction descriptions, screenshots with real balances, or monetary amounts.</p>
+    </aside>
+
+    <section class="section" aria-labelledby="fixes-title">
+      <div class="section-heading"><p class="eyebrow">Troubleshooting</p><h2 id="fixes-title">Common fixes</h2></div>
+      <div class="grid-2">
+        <article class="card"><h3>Reminders are not appearing</h3><p>Check Android notification permission, confirm the reminder is enabled, and remove battery restrictions that delay alarms. Restarting the device should re-register enabled reminders.</p></article>
+        <article class="card"><h3>App lock is unavailable</h3><p>Set up a screen lock or biometrics in Android first. Saldara receives only authentication success or failure.</p></article>
+        <article class="card"><h3>A backup password is lost</h3><p>The password cannot be recovered. Your current on-device ledger is unaffected. Create a new encrypted backup and keep its password in a password manager. Do not delete the current ledger until a new backup has been verified.</p></article>
+        <article class="card"><h3>A backup will not restore</h3><p>Confirm the selected file and password. Wrong-password, tampered, damaged, oversized, and unsupported backups are rejected before the current ledger changes.</p></article>
+        <article class="card"><h3>Moving to another device</h3><p>Create an encrypted backup, save it through Android's document picker to a destination you control, transfer that file, then restore it on the new device. Android automatic backup and device transfer are intentionally disabled.</p></article>
+        <article class="card"><h3>An imported statement is rejected</h3><p>Confirm it is a supported OFX file or a CSV with the required column mapping. Review the file in the app before committing. Unsupported or malformed files do not change the current ledger.</p></article>
+        <article class="card"><h3>Premium is not recognized</h3><p>Use the same Google Play account that made the purchase, check the network connection, and choose Restore purchases in Saldara. Financial records remain available even if Premium verification is temporarily unavailable.</p></article>
+        <article class="card"><h3>Deleting local data</h3><p>Delete individual records in Saldara, or use Android's app settings to clear all Saldara storage. Uninstalling also removes app-private data. External backups and exports must be deleted separately from their chosen destination.</p></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="response-title">
+      <div class="section-heading"><p class="eyebrow">Contact expectations</p><h2 id="response-title">A direct support channel.</h2></div>
+      <div class="grid-2">
+        <article class="card"><h3>What support can help with</h3><p>App defects, backup and restore behavior, Premium purchase recognition, privacy questions, accessibility problems, and clarification of documented features.</p></article>
+        <article class="card"><h3>What support cannot do</h3><p>Recover backup passwords, decrypt inaccessible files without the password, reconstruct deleted local records, access your device, make financial decisions for you, or provide banking, tax, investment, or legal advice.</p></article>
+      </div>
+    </section>
+
+    <div class="language-divider" id="pt-br" lang="pt-BR">
+      <p class="eyebrow">Suporte oficial do Saldara</p>
+      <h1>Ajuda prática para um app local.</h1>
+      <p class="lede">Para suporte e dúvidas sobre privacidade, envie um e-mail para <a href="mailto:invariastudio@gmail.com">invariastudio@gmail.com</a>.</p>
+    </div>
+    <aside class="notice" lang="pt-BR" aria-labelledby="safe-report-pt-title">
+      <h2 id="safe-report-pt-title">Antes de enviar um relato</h2>
+      <p>Informe a versão do Saldara, a versão do Android, o resultado esperado, o que aconteceu e os passos para reproduzir. <strong>Não</strong> inclua senhas de backup, chaves de criptografia, tokens de compra, nomes reais, identificadores de contas, descrições de transações, capturas com saldos reais ou valores.</p>
+    </aside>
+    <section class="section" lang="pt-BR" aria-labelledby="fixes-pt-title">
+      <div class="section-heading"><p class="eyebrow">Soluções de problemas</p><h2 id="fixes-pt-title">Soluções comuns</h2></div>
+      <div class="grid-2">
+        <article class="card"><h3>Os lembretes não aparecem</h3><p>Confira a permissão de notificações do Android, confirme que o lembrete está ativo e remova restrições de bateria que atrasem alarmes. Reiniciar o aparelho deve reagendar os lembretes ativos.</p></article>
+        <article class="card"><h3>O bloqueio do app está indisponível</h3><p>Configure primeiro um bloqueio de tela ou biometria no Android. O Saldara recebe apenas sucesso ou falha da autenticação.</p></article>
+        <article class="card"><h3>A senha de um backup foi perdida</h3><p>A senha não pode ser recuperada. Seu histórico atual no aparelho não é afetado. Crie um novo backup criptografado e guarde a senha em um gerenciador. Não exclua o histórico atual antes de verificar o novo backup.</p></article>
+        <article class="card"><h3>Um backup não é restaurado</h3><p>Confira o arquivo e a senha. Backups com senha errada, adulterados, danificados, grandes demais ou incompatíveis são recusados antes de alterar o histórico atual.</p></article>
+        <article class="card"><h3>Mudança para outro aparelho</h3><p>Crie um backup criptografado, salve pelo seletor de documentos do Android em um destino sob seu controle, transfira o arquivo e restaure no novo aparelho. O backup automático e a transferência de dados do Android ficam desativados de propósito.</p></article>
+        <article class="card"><h3>Um extrato é recusado</h3><p>Confirme que é um arquivo OFX compatível ou CSV com as colunas mapeadas. Revise o arquivo no app antes de confirmar. Arquivos incompatíveis ou malformados não alteram o histórico atual.</p></article>
+        <article class="card"><h3>O Premium não é reconhecido</h3><p>Use a mesma conta do Google Play que fez a compra, confira a conexão e escolha Restaurar compras no Saldara. Os registros financeiros continuam disponíveis mesmo se a verificação Premium estiver temporariamente indisponível.</p></article>
+        <article class="card"><h3>Exclusão dos dados locais</h3><p>Exclua registros no Saldara ou use as configurações de aplicativos do Android para limpar todo o armazenamento do Saldara. Desinstalar também remove dados privados do app. Backups e exportações externos devem ser excluídos separadamente do destino escolhido.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Saldara is published by Invaria Studio. Contact: <a href="mailto:invariastudio@gmail.com">invariastudio@gmail.com</a></p>
+    <nav class="footer-links" aria-label="Footer navigation"><a href="../">Saldara</a><a href="../privacy/">Privacy policy</a><a href="../../legal/">Legal notice</a></nav>
+  </footer>
+</body>
+</html>
