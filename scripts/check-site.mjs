@@ -80,6 +80,9 @@ for (const file of htmlFiles) {
       if (labels !== 'Overview,Privacy policy,Support') {
         errors.push(`${name} has inconsistent Saldara navigation: ${labels}`);
       }
+      if (!/<main\s+id="content">\s*<nav class="product-nav"/i.test(html)) {
+        errors.push(`${name} must keep Saldara navigation inside the page content`);
+      }
     }
   }
 

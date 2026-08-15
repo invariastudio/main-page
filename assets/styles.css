@@ -22,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -142,11 +143,11 @@ main {
 
 .product-nav {
   display: flex;
-  width: min(var(--content), calc(100% - 2rem));
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin: 0.25rem auto 0;
+  margin: 0 auto 1rem;
   padding: 0.65rem 0.8rem 0.65rem 1rem;
   border: 1px solid var(--line);
   border-radius: 1rem;
