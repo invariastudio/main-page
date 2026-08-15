@@ -399,6 +399,17 @@ li {
   color: #d8f4ed;
 }
 
+.product-copy .button.product-outline {
+  border-color: rgba(255, 255, 255, 0.72);
+  background: transparent;
+  color: white;
+}
+
+.product-copy .button.product-outline:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.12);
+}
+
 .product-visual {
   display: grid;
   min-height: 28rem;
