@@ -42,6 +42,7 @@ const htmlFiles = files.filter((file) => extname(file) === '.html');
 
 for (const file of htmlFiles) {
   const name = relative(root, file);
+  const normalizedName = name.replaceAll('\\', '/');
   const html = await readFile(file, 'utf8');
 
   if (!/<html\s+lang="[^"]+"/i.test(html)) errors.push(`${name} has no page language`);
@@ -51,6 +52,35 @@ for (const file of htmlFiles) {
   if (/<script\b/i.test(html)) errors.push(`${name} contains script code`);
   if (/(google-analytics|googletagmanager|facebook\.net|doubleclick|hotjar|segment\.com|mixpanel)/i.test(html)) {
     errors.push(`${name} contains a tracking reference`);
+  }
+
+  if (normalizedName !== '404.html') {
+    const primaryNav = html.match(/<nav class="site-nav"[\s\S]*?<\/nav>/i)?.[0];
+    if (!primaryNav) {
+      errors.push(`${name} has no primary navigation`);
+    } else {
+      const links = [...primaryNav.matchAll(/<a\s+href="([^"]+)"[^>]*>([^<]+)<\/a>/gi)];
+      const labels = links.map((match) => match[2].trim()).join(',');
+      if (labels !== 'Studio,Saldara,Principles,Contact') {
+        errors.push(`${name} has inconsistent primary navigation: ${labels}`);
+      }
+      for (const [, href, label] of links) {
+        if (/^(?:#|mailto:)/i.test(href)) errors.push(`${name} primary item ${label.trim()} does not open a page`);
+      }
+    }
+  }
+
+  if (normalizedName.startsWith('saldara/')) {
+    const productNav = html.match(/<nav class="product-nav"[\s\S]*?<\/nav>/i)?.[0];
+    if (!productNav) {
+      errors.push(`${name} has no Saldara product navigation`);
+    } else {
+      const labels = [...productNav.matchAll(/<a\s+href="[^"]+"[^>]*>([^<]+)<\/a>/gi)]
+        .map((match) => match[1].trim()).join(',');
+      if (labels !== 'Overview,Privacy policy,Support') {
+        errors.push(`${name} has inconsistent Saldara navigation: ${labels}`);
+      }
+    }
   }
 
   const attributes = html.matchAll(/(?:href|src)="([^"]+)"/gi);
